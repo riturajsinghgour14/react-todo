@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 
 const Form = ({saveTodo}) =>{
    const [text, setText] = useState("")
- const hamdleSubmit=(e)=>{
+ const handleSubmit=(e)=>{
   e.preventDefault()
   saveTodo(text);
   setText("")
  };
   
   return (
-    <form className="my-2" onSubmit={(e)=>hamdleSubmit(e)}>
+    <form className="my-2" onSubmit={(e)=>handleSubmit(e)}>
     <input type="text" placeholder="Enter text Here..." 
     className="form-control roundes-0"
     required

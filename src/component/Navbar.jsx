@@ -1,18 +1,16 @@
 import React from 'react'
-
-const Navbar = ({theme,changeTheme}) => {
+import Logo from "../assets/react.svg"
+const Navbar = ({theme, changeTheme}) => {
   return (
-    <nav className={theme ? "navbard bg-dark shadoe-lg" :"navvbar bg-light shadoe-lg "}>
-    <div className="container-fluid">
-      <span className={theme ? "navbar-brand text-light " : "navbar-brand text-dark"}>Todo-App</span>
-    </div>
-    <button className={theme?"btn btn-sm btn-secondary rounded-0" : "btn btn-sm btn-dark rounded-0"
-  }
-   onClick={()=>changeTheme()}
-  > 
-  {theme ? "Light mode" : "Dark mode"} 
-  </button>
-  </nav> 
+    <nav className={theme ? "navbar bg-body-tertiary" : "navbar bg-dark text-light"}>
+  <div className="container-fluid">
+    <a className={theme ? "navbar-brand text-dark" : "navbar-brand text-light"} href="#">
+      <img src={Logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
+      Todo-App
+    </a>
+    <span className={theme ? "btn btn-dark btn-sm rounded-0 flow-end" : "btn btn-secondary btn-sm rounded-0 flow-end"} onClick={() =>changeTheme()}>{theme ? "light" : "Dark"}</span>
+  </div>
+</nav>
   )
 }
 
